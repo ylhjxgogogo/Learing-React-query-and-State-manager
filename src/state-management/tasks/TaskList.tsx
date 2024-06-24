@@ -1,5 +1,5 @@
 import useTasks from "./useTasks";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../auth/useAuth";
 
 const TaskList = () => {
   const { tasks, dispatch } = useTasks();

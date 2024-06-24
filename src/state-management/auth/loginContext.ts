@@ -1,5 +1,5 @@
 import React from "react";
-import { UserAction } from "../reducer/loginReducer";
+import { UserAction } from "./AuthProvider";
 
 interface LoginContextType {
   user: string;

@@ -1,15 +1,13 @@
-import LoginStatus from "./LoginStatus";
-
+import { LoginStatus } from "./auth";
+import useTasks from "./tasks/useTasks";
 const NavBar = () => {
+  const { tasks } = useTasks();
   return (
     <nav className="navbar d-flex justify-content-between">
-      <span className="badge text-bg-secondary"></span>
+      <span className="badge text-bg-secondary">{tasks.length}</span>
       <LoginStatus />
     </nav>
   );
 };
 
 export default NavBar;
-function useTasks(): { tasks: any } {
-  throw new Error("Function not implemented.");
-}
