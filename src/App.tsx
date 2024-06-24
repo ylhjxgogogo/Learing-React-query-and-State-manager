@@ -4,19 +4,17 @@ import tasksReducer from "./state-management/reducer/tasksReducer";
 import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
 import TasksContext from "./state-management/contexts/tasksContext";
-import loginReducer from "./state-management/reducer/loginReducer";
-import LoginContext from "./state-management/contexts/loginContext";
+import AuthProvider from "./state-management/AuthProvider";
+import TasksProvider from "./state-management/TasksProvider";
 
 function App() {
-  const [tasks, dispatch] = useReducer(tasksReducer, []);
-  const [user, userDispatch] = useReducer(loginReducer, "");
   return (
-    <LoginContext.Provider value={{ user, dispatch: userDispatch }}>
-      <TasksContext.Provider value={{ tasks, dispatch }}>
+    <AuthProvider>
+      <TasksProvider>
         <NavBar />
         <HomePage />
-      </TasksContext.Provider>
-    </LoginContext.Provider>
+      </TasksProvider>
+    </AuthProvider>
   );
 }
 
