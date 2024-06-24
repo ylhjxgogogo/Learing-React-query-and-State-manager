@@ -1,16 +1,15 @@
-import { useContext } from "react";
 import LoginStatus from "./LoginStatus";
-import TasksContext from "./contexts/tasksContext";
-import useTasks from "./hooks/useTasks";
 
 const NavBar = () => {
-  const { tasks } = useTasks();
   return (
     <nav className="navbar d-flex justify-content-between">
-      <span className="badge text-bg-secondary">{tasks.length}</span>
+      <span className="badge text-bg-secondary"></span>
       <LoginStatus />
     </nav>
   );
 };
 
 export default NavBar;
+function useTasks(): { tasks: any } {
+  throw new Error("Function not implemented.");
+}
